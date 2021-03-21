@@ -1,0 +1,62 @@
+
+.scannerContainer {
+  width: calc(55vw);
+  height: calc(35vw);
+  margin: 0 auto;
+}
+
+.divMargin {
+  margin-top: 16em;
+}
+
+.scannerCam {
+  width: calc(100%);
+  height: calc(100%);
+  border-radius: 8px;
+  border: 3px solid #626569;
+  margin: 0 auto;
+  margin-top: 9em;
+}
+.scannerCam div{
+  width: 95%;
+  height: 95%;
+  margin: 1.6% 2.5%;
+}
+
+.btn-scan {
+  width: 50%;
+  margin: 0 auto;
+  height: 5em;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 25px;
+  background: #626569;
+  border: 1px solid #626569
+}
+.btn-scan:hover {
+  border: 1px solid #626569;
+  background: rgb(225,225,225);
+  animation: enable 0.3s ease-in-out
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.invalid {
+  text-align: center;
+  margin-top: 150px;
+}
+.invalid h1 {
+  font-weight: 600;
+}

@@ -1,0 +1,12 @@
+
+.bkg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #044A59;
+  background-size: cover;
+  background-position: center;
+  overflow: auto
+}
+
+
