@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -31,30 +34,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script>
-    let parser = new UAParser()
-    // const day = new Date().toDateString();
-    const user = {
-    time: new Date().toLocaleString(),
-    result: parser.getResult()
-    }
-    
-    const day = new Date
-    const yr = day.getFullYear()
-    const date = day.getDate()
-    const mon = day.getMonth() + 1
-
-    function filter(val){
-      if (val < 10){
-        val = ('0' + val).slice(-2)
-      }
-      return val
-    }
-
-    const theDate = yr + ' ' + filter(mon) + ' ' + filter(date)
-    axios.post('https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/' + theDate + '.json', user)
-    .then(res => {return(res.data)})
-    .catch(err => console.log(err.data))
-  </script>
-
+  
 </html>

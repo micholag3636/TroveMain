@@ -1,6 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment, useEffect } from 'react'
 import Product from '../../components/Product/Product'
 import {clearScanned, setItem, deleteItem} from '../../store/actions/index'
+import fire from "../../fire.js"
+import firebase from "firebase"
 
 import {connect} from 'react-redux'
 
@@ -16,6 +18,8 @@ class History extends Component {
     // clear the scannedItems of the state
     this.props.clearScanned()
   }
+  
+
 
   render() {
     let scannedItems = 
@@ -25,6 +29,7 @@ class History extends Component {
 
 // render the table with all the scanned items info IF there is
 if (this.props.scannedItems.length >= 1){
+
   scannedItems = 
   <div className='divHistory'>
           <table className="table table-striped">
@@ -39,6 +44,7 @@ if (this.props.scannedItems.length >= 1){
               </tr>
             </thead>
             <tbody>
+
               {this.props.scannedItems.map((scannedItem, i) => {
                 return (
                   <tr key={i}>
@@ -57,10 +63,23 @@ if (this.props.scannedItems.length >= 1){
                   </tr>
                   )}
                   )}
+
+
+
+
+
+
+
+
+
+
             </tbody>
           </table>
         </div>
+
     }
+    
+  
     
   // render selected item    
   if(this.props.selectedItem){
@@ -69,8 +88,12 @@ if (this.props.scannedItems.length >= 1){
       <Product 
         item={this.props.selectedItem}
         view={this.props.clearScanned}/>
+      
     </div>
   }
+
+
+
 
     return (
       <Fragment>
@@ -79,6 +102,10 @@ if (this.props.scannedItems.length >= 1){
     )
   }
 }
+
+
+
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
