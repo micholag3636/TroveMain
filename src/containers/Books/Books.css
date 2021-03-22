@@ -1,0 +1,14 @@
+.books-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: row;
+}
+
+.image-box{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+}

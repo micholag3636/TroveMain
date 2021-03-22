@@ -7,6 +7,7 @@ import Navigation from './components/Navigation/Navigation'
 import Scan from './containers/Scan/Scan'
 import History from './containers/History/History'
 import Main from "./containers/Main/Main.js"
+import Books from "./containers/Books/Books.js"
 import './App.css';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <Route exact path='/history' component={History}/>
         <Route exact path='/scan' component={Scan}/>
         <Route exact path='/' component={Main}/>
+        <Route exact path='/books' component={Books}/>
       </Switch>
     )
     return (
