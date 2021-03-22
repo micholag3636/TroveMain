@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: row;
+    margin: 20px;
+
 }
 
 .image-box{
@@ -12,3 +14,19 @@
  align-items: center;
  justify-content: center;
 }
+
+.books-sect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: row;
+    width: 100%;
+}
+
+.all-books{width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+color: white;}

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import "./Books.css"
 import axios from "axios"
 import BookDisplay from './BookDisplay.js'
+import {Link} from "react-router-dom"
 
 class Books extends Component{
     constructor(props){
@@ -36,6 +37,11 @@ class Books extends Component{
     render(){
         return(
             <div>
+                <div className="all-books">
+                  <h1>All Books</h1>
+                  </div>
+            <div className="books-sect">
+              
                 {this.state.results.map((result) => {
 
                     return(
@@ -55,6 +61,8 @@ class Books extends Component{
                 })}
 
 
+            </div>
+            <Link  id="scan-item" to="/scan"><h3>Scan</h3></Link>
             </div>
         )
 

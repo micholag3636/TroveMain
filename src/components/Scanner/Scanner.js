@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Quagga from 'quagga'
+import {Link} from "react-router-dom"
 
 import './Scanner.css'
 
@@ -53,9 +54,13 @@ class Scanner extends Component {
   var h = window.innerHeight;
   
     return (
+      <div>
       <Fragment>
             <div id="barcodeScan"></div>
+        
       </Fragment>
+  
+      </div>
     )
   }
 }

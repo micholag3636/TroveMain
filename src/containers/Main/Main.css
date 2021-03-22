@@ -26,3 +26,9 @@
     margin-bottom: 15px;
     background-color: #BF505A;
 }
+
+#map-box{
+    width: 100%;
+   
+    height: 40vh;
+}
