@@ -19,6 +19,9 @@ function Login(props) {
             e.preventDefault();
             fire.auth().signInWithEmailAndPassword(email,password)
             .then(response => props.toTrue())
+            .catch((error) => {
+                console.log(error)
+            })
 
            
             
@@ -33,9 +36,7 @@ function Login(props) {
               <div className="login">
             <div className="login__logo">
 
-                <img id="llogoimg" src="https://w7.pngwing.com/pngs/184/147/png-transparent-facebook-computer-icons-social-media-social-networking-service-scalable-graphics-facebook-f-logo-white-background-facebook-lite-logo-angle-text-website-thumbnail.png"  />
-
-
+             
 
                 <form onSubmit={login}>
                 <div id="formbo">
@@ -51,7 +52,7 @@ function Login(props) {
 
 
   </div>
- <h5 id="signupfor"><Link id="links" href="/">Sign Up For Facebook</Link></h5> 
+ <h5 id="signupfor"><Link id="links" to="/">Sign Up For Trove</Link></h5> 
    </form>
    
 

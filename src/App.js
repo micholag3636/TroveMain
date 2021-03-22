@@ -11,6 +11,7 @@ import Books from "./containers/Books/Books.js"
 import Signup from "./containers/Authentication/Signup.js"
 import Login from "./containers/Authentication/Login.js"
 import './App.css';
+import { connect } from "react-redux"
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
 
       </Switch>
     )
-    const user = false
+    const user = this.props.change
     return (
       <div>
     <BrowserRouter>
@@ -58,4 +59,11 @@ class App extends Component {
   )};
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    change: state.change
+  }
+}
+
+
+export default connect(mapStateToProps)(App)
