@@ -1,6 +1,8 @@
 import React from 'react'
 import './Spinner.css'
 
+//Controls spinner animation when user scans a book
+
 
 export default () => {
   return (

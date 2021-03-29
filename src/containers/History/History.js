@@ -3,10 +3,16 @@ import Product from '../../components/Product/Product'
 import {clearScanned, setItem, deleteItem} from '../../store/actions/index'
 import fire from "../../fire.js"
 import firebase from "firebase"
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
 
 import {connect} from 'react-redux'
+import {Link} from "react-router-dom"
 
 import './History.css'
+
+//Component keeps track of user book scanning history in a session
 
 class History extends Component {
 
@@ -17,6 +23,8 @@ class History extends Component {
   componentDidMount(){
     // clear the scannedItems of the state
     this.props.clearScanned()
+
+   
   }
   
 
@@ -95,10 +103,21 @@ if (this.props.scannedItems.length >= 1){
 
 
 
-    return (
+    return (<div> 
+    
       <Fragment>
         {scannedItems}
       </Fragment>
+
+      <nav className="nav-bot">
+            <Link  id="scan-item" to="/main"><h3><HomeIcon /></h3></Link>
+            <Link  id="scan-item" to="/scan"><h3><AddIcon /></h3></Link>
+            <Link  id="scan-item" to="/books"><h3><LibraryBooksIcon /></h3></Link>
+
+            </nav>
+
+
+      </div>
     )
   }
 }

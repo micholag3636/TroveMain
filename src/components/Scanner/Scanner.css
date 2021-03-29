@@ -2,9 +2,14 @@
 
 video {
   width: calc(100%);
-  height: calc(100%)
+  height: calc(100%);
 }
 canvas{
   width: calc(100%);
-  height: calc(100%)
+  height: calc(100%);
 }
+
+#interactivescan{
+  width: calc(100%);
+}
+

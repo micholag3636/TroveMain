@@ -5,11 +5,30 @@ import { connect } from "react-redux"
 import { toTrue } from "../../store/configStore.js"
 import "./Login.css"
 import {Link} from "react-router-dom"
+import firebase from "firebase"
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+ 
 
  
 
 
 function Login(props) {
+
+
+    
+    const uiConfig = {
+        signInFlow: "popup",
+        signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID
+        ],
+        callbacks: {
+            signInSuccess: () => {
+                props.toTrue()
+            }
+
+        }
+    }
 
 
     const [email,setEmail] = useState("")
@@ -49,6 +68,12 @@ function Login(props) {
   
 
   <button type="submit" id="lbut"> Log In</button> 
+  <StyledFirebaseAuth
+  className="authother2"
+
+uiConfig={uiConfig}
+firebaseAuth={firebase.auth()}
+/>
 
 
   </div>

@@ -1,5 +1,5 @@
 .nav-bot{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     margin-left: auto;
@@ -19,12 +19,16 @@
 }
 
 #scan-item{
-    height: 80px;
-    width: 200px;
+    height: 60px;
+    width: 30%;
     border-radius: 100px;
     color: white;
     margin-bottom: 15px;
     background-color: #BF505A;
+    margin-right: 6px;
+    margin-left: 6px;
+  
+  
 }
 
 #map-box{
@@ -32,3 +36,92 @@
    
     height: 40vh;
 }
+
+.special{
+    position: fixed;
+    bottom: 0px;
+}
+
+.mapimg{
+    height: 80px;
+    width: auto;
+}
+.imgob{
+    border-radius: 8px;
+}
+
+.nearbybooks{
+    height: 60vh;
+    background-color: white;
+    width: 100%;
+}
+
+.googlemapsapi{
+    width: 100%;
+}
+
+.mainfull{
+    width: 100%;
+    background-color:  white;
+}
+
+#booksid{
+    margin-left: 23px;
+    margin-bottom: 15px;
+}
+
+.books-sect2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+   
+
+    
+   
+}
+
+
+
+
+
+
+@media (max-width: 1232px){
+    .books-sect2{
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+
+
+
+}
+
+
+@media (max-width: 950px){
+    .books-sect2{
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+
+
+
+}
+
+
+
+@media (max-width: 630px){
+    .books-sect2{
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+
+
+
+}
+
+
+@media (max-width: 800px) {
+    .books-sects { 
+          flex-direction: row;
+      }
+    }
+    
+    

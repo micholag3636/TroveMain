@@ -32,7 +32,7 @@ td {
 }
 
 .product-nav{
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   display: flex;
@@ -47,4 +47,61 @@ td {
   border: 0px;
 
 
+
 }
+
+.fixp{
+  border: 0px black solid;
+
+
+
+}
+
+#descriptionbook{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#addlink{
+  color: white;
+
+}
+
+.imgshelf{
+  margin-bottom: 20px;
+}
+
+.shelfpage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#buttonaddednav{
+  display: flex;
+  margin-left: 100px;
+  background-color: #BF505A;
+  height: 70px;
+  border-radius: 10px;
+ 
+
+
+}
+
+
+@media (max-width: 800px) {
+ #buttonaddednav { 
+        display: none;
+    }
+  }
+  
+  #addednav{
+    position: fixed;
+    bottom: 0px;
+  }
+  

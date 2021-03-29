@@ -1,5 +1,6 @@
 import {APIKEY, URL_PATH, URL_EXTENSION} from '../../assets/config'
 
+// Redux actions
 export const startScanning = () => {
   return {
     type: "START_SCANNING"

@@ -44,13 +44,17 @@
     margin-bottom: 50px;
 }
 
+#formbo button{
+    background-color: #BF505A;
+}
+
 #fname{
     height: 30px;
     width: 405px;
     margin: 10px;
     border: none;
-  background: transparent;
-  border-bottom: 2px solid #E5E8F1;
+
+
   outline: none;
   margin-bottom: 60px;
 
@@ -62,19 +66,17 @@
     height: 40px;
     width: 405px;
     margin: 10px;
-    background-color: white;
+
     border: none;
 
 }
 
 
 #hname{
-  
-    border: none;
-    background: transparent;
-    border-bottom: 2px solid #E5E8F1;
+
+   
     outline: none;
-    background-color: white;
+
     margin-right: -4px;
     margin-left: -4px;
  
@@ -94,7 +96,8 @@
     width: 485px;
     height: 100px;
     margin-top: 30px;
-    background-color: white;
+
+    
 }
 
 #llogoimg{
@@ -119,7 +122,7 @@
 }
 
 #signup{
-    background-color: white;
+
     margin-right: 275px;
     color: #526BA2;
     font-weight: 400;
@@ -128,14 +131,14 @@
 #auser{
     color: #8C9DC3;
     margin-top: 20px;
-    background-color: white;
+    
     margin-right: 255px;
 
 }
 
 #singl{
-    background-color: white;
-    color: #5871A7;
+    
+    color: #BF505A;
 }
 
 #lbut{
@@ -163,3 +166,9 @@
     color: white;
     text-decoration: none;
 }
+
+.authother2{
+    position: relative;
+    bottom: 190px;
+}
+

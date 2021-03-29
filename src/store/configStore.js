@@ -3,11 +3,11 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import scannedItems from './reducers/scannedItems'
 
-
+// Initial value of redux state
 const isLoggedIn = false
 
 
-
+// Redux to true action
 export const toTrue = () =>{
   return{
     type:"toTrue"
@@ -16,6 +16,8 @@ export const toTrue = () =>{
 
 }
 
+
+// Redux to false action
 export const toFalse = () =>{
   return{
     type:"toFalse"
@@ -24,6 +26,8 @@ export const toFalse = () =>{
 
 }
 
+
+// Reducer which sets redux state value to true when user signs up for the app
 const change = (state = isLoggedIn,action) => {
 
   switch(action.type){

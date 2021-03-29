@@ -22,25 +22,68 @@
 
 }
 
+.authother{
+    position: relative;
+    bottom: 150px;
+   
+}
+
+
+@media (max-width: 1500px) {
+    .authother { 
+          margin-top: 210px;
+      }
+    }
+    
+
+
+#formbox h1{
+    color: white;
+    margin-right: 313px;
+   
+}
+
+#formbox h5{
+    color: white;
+}
+
+#singl{
+    color: red;
+}
 .login > button {
-    width: 300px;
-    height: 60px;
-    background-color: #c6cacf;
+    height: 40px;
+    width: 466px;
+   margin: 10px;
+  
     color: #eff2f5;
     font-weight: 800;
     border-radius: 10px;
 
 }
 
+
+
+
+#formbox button{
+    height: 40px;
+    width: 466px;
+   margin: 10px;
+   background-color: #BF505A;
+}
+
 .login > button:hover {
     background-color: white;
-    color: rgb(67, 67, 255);
+    
+    width: 466px;
+   margin: 10px; 
+   width: 466px;
+  margin: 10px;;
 }
 
 #formbox{
-    width: 500px;
-    height: 600px;
-    background-color: white;
+    width: 100%;
+    height: 80vh;
+    background-color: transparent;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -50,35 +93,17 @@
 }
 
 #fname{
-    height: 30px;
+    height: 40px;
     width: 405px;
     margin: 10px;
+
     border: none;
-  background: transparent;
-  border-bottom: 2px solid #E5E8F1;
-  outline: none;
-  margin-bottom: 60px;
 
 
     
 }
 
 
-#hname{
-  
-    border: none;
-    background: transparent;
-    border-bottom: 2px solid #E5E8F1;
-    outline: none;
-    background-color: white;
-    margin-right: -4px;
-    margin-left: -4px;
- 
-
-    
-   
-
-}
 
 
 
@@ -90,8 +115,7 @@
     width: 485px;
     height: 100px;
     margin-top: 30px;
-    background-color: white;
-}
+ }
 
 #logoimg{
 
@@ -112,21 +136,48 @@
 }
 
 #signup{
-    background-color: white;
+    
     margin-right: 275px;
-    color: #526BA2;
+    color: white;
     font-weight: 400;
 }
 
 #auser{
-    color: #8C9DC3;
+    color: white;
     margin-top: 20px;
-    background-color: white;
+ 
     margin-right: 255px;
 
 }
 
 #singl{
-    background-color: white;
-    color: #5871A7;
+   
+    color: white;
+}
+
+#name input{
+    height: 40px;
+    width: 405px;
+   
+    margin-bottom: -10px;
+}
+
+.input2{
+    height: 60px;
+  
+    width: 405px;
+    margin: 10px;
+
+}
+
+#formbox input{
+    height: 40px;
+    width: 466px;
+   margin: 10px;
+}
+
+#buttonsup{
+    height: 40px;
+    width: 466px;
+   margin: 10px;
 }

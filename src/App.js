@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 
+import Nav from "./components/Navigation/Nav.js"
 
-import Navigation from './components/Navigation/Navigation'
 import Scan from './containers/Scan/Scan'
 import History from './containers/History/History'
 import Main from "./containers/Main/Main.js"
@@ -12,24 +12,31 @@ import Signup from "./containers/Authentication/Signup.js"
 import Login from "./containers/Authentication/Login.js"
 import './App.css';
 import { connect } from "react-redux"
+import added from "./components/Product/added.js"
 
 class App extends Component {
 
 
 
   render(){
+    // Routes to all the pages on the App
     let routes = (
       <Switch>
+             <Route exact path='/added' component={added}/>
         <Route exact path='/history' component={History}/>
         <Route exact path='/scan' component={Scan}/>
-        <Route exact path='/' component={Main}/>
         <Route exact path='/books' component={Books}/>
+        <Route exact path='/' component={Main}/>
+        <Route  exact path='/main' component={Main}/>
+        
+        
 
       </Switch>
     )
     const user = this.props.change
     return (
-      <div>
+      // Condition which tracks if user is logged In
+      <div className="apswidth">
     <BrowserRouter>
       <div className="bkg">
         <div className="container">
@@ -38,12 +45,16 @@ class App extends Component {
           <div>
 <Route exact path="/">
   <Signup />
+
   </Route> 
-  <Route exact path='/login' component={Login}/>
+  <Route exact path='/main' component={Login}/>
+
+ 
 
   </div>
   ) : (
     <div>
+      <Nav/>
 
 
         
@@ -58,7 +69,7 @@ class App extends Component {
     </div>
   )};
 }
-
+//Getting redux state
 const mapStateToProps = (state) => {
   return {
     change: state.change

@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Dependencies which need to be installed
+
+Quagga
+@material-ui/core
+@materia-ui/icons
+react-google-maps/api
+firebase
+redux
+react-redux
+firease-tools
+redux-thunk
+
+

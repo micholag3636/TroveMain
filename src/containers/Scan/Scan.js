@@ -6,8 +6,12 @@ import Scanner from '../../components/Scanner/Scanner'
 import Product from '../../components/Product/Product'
 import './Scan.css'
 import thunk from "redux-thunk"
+import {Link} from "react-router-dom"
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import HomeIcon from '@material-ui/icons/Home';
+import HistoryIcon from '@material-ui/icons/History';
 
-
+// Component which controls then barcode scanner
 class Scan extends Component {
 
   constructor(props){
@@ -26,8 +30,9 @@ class Scan extends Component {
         <div className='divMargin'>
           <button 
             type="button" 
+            id="scanbutton"
             onClick={this.props.startScanning}
-            className="btn btn-primary btn-md btn-block btn-scan">{'Start Scanning'}</button>
+            className="btn btn-primary btn-md btn-block btn-scan">{'Scan'}</button>
         </div>
       </Fragment>
 
@@ -50,7 +55,7 @@ class Scan extends Component {
       <Fragment>
         <div className='divMargin'>
           <div className='invalid'>
-            <h1>You need an <a href="https://www.barcodelookup.com/api" target="_blank">API key</a> to run this App.</h1>
+            <h1>You need an API key to run this App.</h1>
           </div>
           <button 
             type="button" 
@@ -87,11 +92,17 @@ class Scan extends Component {
 
 
     return (
+      <div>
       <Fragment>
+
         <div className="scannerContainer"> 
           {componentRendered}
+        
         </div>
       </Fragment>
+   
+      </div>
+    
     )
   }
 }

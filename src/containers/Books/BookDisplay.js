@@ -3,6 +3,8 @@ import "./Books.css"
 import {Link} from "react-router-dom"
 
 function BookDisplay(props) {
+
+    //What the user will see when they go to the books page of the application
     return (
     
         <div className="books-box">

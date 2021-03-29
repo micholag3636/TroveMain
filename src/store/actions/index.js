@@ -1,5 +1,5 @@
 
-
+// All redux actions
 export {
   processBarcode,
   startScanning,
