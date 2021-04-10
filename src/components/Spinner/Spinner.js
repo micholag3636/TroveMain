@@ -7,8 +7,31 @@ import './Spinner.css'
 export default () => {
   return (
     <div className='spinnerContainer'>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      
 
-    <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+
+    
     </div>
   )
 }
+
+
+
+/*
+
+
+<div className='spinnerContainer'>
+
+<div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+
+*/

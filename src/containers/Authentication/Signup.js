@@ -44,6 +44,9 @@ function Signup(props){
     console.log(email)
 
 
+   
+
+
 
 
 
@@ -63,6 +66,8 @@ function Signup(props){
      
          
         }
+
+  
         
    
 

@@ -15,12 +15,23 @@
     display: grid;
     place-items: center;
     height: 100vh;
+    width: 100%;
 
      background-color: #044A59;
     
     
 
 }
+@media(max-width:  800px){
+    .login{
+        height: 130vh;
+        width: 130vw;
+    }
+
+
+}
+
+
 
 .authother{
     position: relative;

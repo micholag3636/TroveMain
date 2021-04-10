@@ -9,15 +9,20 @@ import './Scanner.css'
 
 class Scanner extends Component {
 
+
   constructor(props){
     super(props);
     this.state ={
 
       //State which controls the scanner based on if a camera is present
+   
       nocamera: false
     }
+
     this.onDetect = this.onDetect.bind(this)
   }
+
+
 
 
   componentDidMount(){
@@ -27,8 +32,10 @@ class Scanner extends Component {
         type: "LiveStream",
         target: document.querySelector("#barcodeScan"),
         constraints: {
-          width: "600",
-          height: "400"
+          height: "490",
+          width: "790"
+      
+         
         
         
         },
@@ -63,13 +70,41 @@ class Scanner extends Component {
   var h = window.innerHeight;
   
     return (
-      <div>
+     
+     
       <Fragment>
-            <div id="barcodeScan"></div>
+        <div id="barcodeScan"> 
+
+        <img src="https://i.postimg.cc/85fFDRhK/Screenshot-147-1-removebg-preview.png" className="onscanner"></img>
+        
+    
+      </div>
+
+
+     
+    
+
+
+
+
+
+
+
+
+
+      
+           
         
       </Fragment>
+
+
+      
+    
+    
+    
+     
   
-      </div>
+     
     )
   }
 }

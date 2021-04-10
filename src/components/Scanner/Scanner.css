@@ -3,13 +3,118 @@
 video {
   width: calc(100%);
   height: calc(100%);
+ 
+  margin-bottom: 250px;
+  position: relative;
+  bottom: 310px;
+ 
+
+ 
 }
 canvas{
   width: calc(100%);
   height: calc(100%);
+ 
 }
 
 #interactivescan{
   width: calc(100%);
+
 }
 
+
+
+
+.onscanner{
+  z-index: 3;
+  height: 30%;
+  width: auto;
+ 
+  position: relative;
+ 
+  animation-name: image;
+  animation-duration: 3s;
+  left: 43%;
+  
+  
+
+
+}
+
+#sbox{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+@keyframes image{
+
+  0%{
+    opacity: 0%;
+  }
+
+  15%{
+    opacity: 50%
+  }
+
+  30%{
+    opacity: 90%
+  }
+
+  45%{
+    opacity: 50%;
+  }
+
+  60%{
+    opacity: 10%;
+  }
+
+
+  75%{
+    opacity: 50%
+  }
+
+  100%{
+    opacity: 100%;
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .onscanner { 
+    bottom: 12%;
+    
+    
+   
+    
+    
+        left: 38%;
+    }
+  }
+
+
+
+@media (max-width: 815px) {
+  .onscanner { 
+
+
+  
+ 
+        left: 23%;
+      
+    }
+  }
+
+
+
+  

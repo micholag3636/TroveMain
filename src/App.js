@@ -18,14 +18,29 @@ class App extends Component {
 
 
 
+
+  
+  constructor(props){
+    super(props);
+
+    this.state={
+        //Data will be stored in the results state and selectedBook keeps track of each book on the map
+       
+        toggle: false
+
+    }
+}
+
+
+
   render(){
     // Routes to all the pages on the App
     let routes = (
       <Switch>
              <Route exact path='/added' component={added}/>
         <Route exact path='/history' component={History}/>
-        <Route exact path='/scan' component={Scan}/>
-        <Route exact path='/books' component={Books}/>
+        <Route exact path='/scan'  component={Scan}/>
+        <Route exact path='/books'  component={Books}/>
         <Route exact path='/' component={Main}/>
         <Route  exact path='/main' component={Main}/>
         
@@ -39,7 +54,7 @@ class App extends Component {
       <div className="apswidth">
     <BrowserRouter>
       <div className="bkg">
-        <div className="container">
+        <div className="l">
 
         {!user ? (
           <div>

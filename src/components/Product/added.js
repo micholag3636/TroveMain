@@ -5,12 +5,13 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import HistoryIcon from '@material-ui/icons/History';
 import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
+import MapIcon from '@material-ui/icons/Map';
 
 
 
 function added() {
     return (
-        <div>
+        <div className="addedbook">
             <div className="shelfpage">
             <h1>Your Book Has Succesfully Been Added To The Library</h1>
             <img className="imgshelf" src="https://i.imgur.com/EjwBLh5.png" />
@@ -23,12 +24,14 @@ function added() {
 
 
 
-            <nav id="addednav" className="nav-bot">
-            <Link  id="scan-item" to="/main"><h3><HomeIcon /></h3></Link>
-            <Link   id="scan-item" to="/history"><h3><HistoryIcon /></h3></Link>
-            <Link  id="scan-item" to="/books"><h3><LibraryBooksIcon /></h3></Link>
+            <nav id="addednav">
+            <Link  className="openbookofscan" to="/main"><MapIcon className="mapicon" /> Map</Link>
+            <Link   id="openbookofscan2" className="openbookofscan" to="/scan"><AddIcon  /> </Link>
+          
+           
 
             </nav>
+           
            
             
         </div>

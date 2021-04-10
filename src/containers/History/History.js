@@ -45,8 +45,8 @@ if (this.props.scannedItems.length >= 1){
               <tr>
                 <th scope="col">No.</th>
                 <th scope="col">Barcode</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Manufacturer</th>
+                <th scope="col">Book Name</th>
+            
                 <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
@@ -60,10 +60,7 @@ if (this.props.scannedItems.length >= 1){
                     <td>{scannedItem.barcode_number}</td>
                     <td>{scannedItem.product_name}</td>
                     <td>{scannedItem.manufacturer}</td>
-                    <td><button 
-                          type="button" 
-                          onClick={()=>this.props.setItem(i)}
-                          className="btn btn-sm btn-info">View More</button></td>
+                    
                     <td><button 
                           onClick={()=>this.props.deleteItem(i)}
                           type="button" 
@@ -109,12 +106,7 @@ if (this.props.scannedItems.length >= 1){
         {scannedItems}
       </Fragment>
 
-      <nav className="nav-bot">
-            <Link  id="scan-item" to="/main"><h3><HomeIcon /></h3></Link>
-            <Link  id="scan-item" to="/scan"><h3><AddIcon /></h3></Link>
-            <Link  id="scan-item" to="/books"><h3><LibraryBooksIcon /></h3></Link>
-
-            </nav>
+     
 
 
       </div>

@@ -7,23 +7,54 @@ import HistoryIcon from '@material-ui/icons/History';
 import AddIcon from '@material-ui/icons/Add';
 import axios from "axios";
 import BookDisplay from '../../containers/Books/BookDisplay.js'
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import MenuIcon from '@material-ui/icons/Menu';
+import PostAddIcon from '@material-ui/icons/PostAdd';
 
 // Home page of App
 class Map extends Component{
 
+
+    
+
     constructor(props){
+
+     
+
+   
+
+
+
+
         super(props);
 
         this.state={
             //Data will be stored in the results state and selectedBook keeps track of each book on the map
             results:[],
-            selectedBook: null
+            selectedBook: null,
+            show: false
 
         }
-    }
+    
+      
+
 
     //On the initial page load this will get book data from the firebase database
+    this.toggleDiv = this.toggleDiv.bind(this)
 
+    
+
+}
+
+
+
+
+
+
+
+
+
+  
     componentDidMount(){
         axios.get("https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/" + ".json")
         .then(response => {
@@ -46,12 +77,33 @@ class Map extends Component{
 
 
 
+
+    
+    
+
+
+    
+  toggleDiv = () => {
+        const {show} = this.state;
+        this.setState({show: !show})
+    }
+
+
+
+
+
  
 
     render(){
     return(
+        <div>
 
-        //Google Maps API 
+  
+
+
+        <div>
+
+  
         <div className="mainfull">
             <GoogleMap className="googlemapisapi" defaultZoom={10} defaultCenter={{lat: 55.3617609, lng: -3.4433238}}
         
@@ -76,7 +128,7 @@ class Map extends Component{
                     this.setState({selectedBook: null})
                 }}>
                    
-             <img className="mapimg" src={this.state.selectedBook.image} />
+            <img className="mapimg" src={this.state.selectedBook.image} />
 
                 </InfoWindow>
 
@@ -86,19 +138,58 @@ class Map extends Component{
            
            
             </GoogleMap>
+            </div>
+         
+    
+    </div>
+    
 
-        
-        
-            <div >
-                <h2 id="booksid">Books</h2>
+
+
+
+
+
+
+
+
+
+    {this.state.show &&
+                      <div className="booksidl" >
+                      <h2 id="booksidl">Books</h2>
+                      </div>}
+
+
+
                 <div className="books-sect2">
+                   
+             
 
+
+                 
+
+              
+
+
+        
+        
+          
 
             {this.state.results.map((result) => {
 
 return(
     //Displays books on home page
+    
+  
 
+<div>
+{this.state.show && 
+
+    
+    <div>
+
+
+
+<div className="book4main">
 <BookDisplay
 key={result.barcode}
 
@@ -109,19 +200,41 @@ name={result.name}
 
 
 />
+</div>
+
+</div>
+
+
+
+  }
+
+</div>
+
 
 )
 })}
 </div>
 
+
+<nav className="openbookbox">
+              <Link to="/books" className="openbook"><LibraryBooksIcon /></Link>
+
+
+              <Link to="/scan" className="openbook2"><PostAddIcon /></Link>
+              
+        
+          </nav>
+
           
 
 
             </div>
-            </div>
+    
+        
 
 
-            
+           
+           
 
     )
 
@@ -154,16 +267,10 @@ function Main() {
 
 
 
-
-
-            <nav className="nav-bot">
-            <Link  id="scan-item" to="/scan"><h3><AddIcon /></h3></Link>
-            <Link   id="scan-item" to="/history"><h3><HistoryIcon /></h3></Link>
-            <Link  id="scan-item" to="/books"><h3><LibraryBooksIcon /></h3></Link>
-
-            </nav>
+         
             
         </div>
+    
     )
 }
 

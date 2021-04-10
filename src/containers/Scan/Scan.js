@@ -4,12 +4,15 @@ import {processBarcode, startScanning} from '../../store/actions/index'
 import Spinner from '../../components/Spinner/Spinner'
 import Scanner from '../../components/Scanner/Scanner'
 import Product from '../../components/Product/Product'
+import Popup from "../../components/Product/Popup.js"
 import './Scan.css'
 import thunk from "redux-thunk"
 import {Link} from "react-router-dom"
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import HomeIcon from '@material-ui/icons/Home';
 import HistoryIcon from '@material-ui/icons/History';
+import MapIcon from '@material-ui/icons/Map';
+
 
 // Component which controls then barcode scanner
 class Scan extends Component {
@@ -17,13 +20,33 @@ class Scan extends Component {
   constructor(props){
     super(props);
     this._onBarcodeDetect = this._onBarcodeDetect.bind(this)
+   
+  
+
+   
   }
 
   _onBarcodeDetect(barcode){
     this.props.process(barcode)
   }
+
+
+
+
+  componentDidMount(){
+  
+
+    this.props.startScanning()
+
+  }
+  
+
+
+  
  
   render() {
+
+    
     
     let componentRendered = 
       <Fragment>
@@ -41,7 +64,7 @@ class Scan extends Component {
       <Fragment>
         <div className='divMargin'>
           <div className='invalid'>
-            <h1>Invalid Barcode!</h1>
+            <h1>Failed To Scan!</h1>
           </div>
           <button 
             type="button" 
@@ -84,7 +107,7 @@ class Scan extends Component {
               />
           </div>
       } else {
-        componentRendered = <Product 
+        componentRendered = <Product
                               item={this.props.productScanned}
                               click={this.props.startScanning}/>
       }
@@ -93,6 +116,9 @@ class Scan extends Component {
 
     return (
       <div>
+     
+     
+       
       <Fragment>
 
         <div className="scannerContainer"> 
@@ -100,8 +126,12 @@ class Scan extends Component {
         
         </div>
       </Fragment>
-   
       </div>
+
+
+      
+   
+      
     
     )
   }

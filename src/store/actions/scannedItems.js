@@ -50,18 +50,30 @@ export const processBarcode = (barcode) => {
       }
     })
     .then(res => {
-       {
+      if(res.totalItems === 0){
+       dispatch(invalidBarcode('invalid'))
+
+      } else if(res.totalItems !== 0) {
         product = {
+         
           barcode_number: res.items[0].id,
           product_name: res.items[0].volumeInfo.title,
           product_image: res.items[0].volumeInfo.imageLinks.smallThumbnail,
           category: res.items[0].volumeInfo.categories[0],
           description: res.items[0].volumeInfo.description,
         }
+
+
+
+       
+
+       
         dispatch(productDetected(product))
+      }
+        
       
 
-      } 
+      
       
     })
   }

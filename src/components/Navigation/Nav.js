@@ -6,6 +6,7 @@ import "./Navigation.css"
 
 function Nav() {
     return (
+        <div className="navsbox">
         <div className="Nav">
               <Link  id="scan-itemnav" to="/main"><h3>Home</h3></Link>
              <Link  id="scan-itemnav" to="/scan"><h3>Scan</h3></Link>
@@ -13,6 +14,7 @@ function Nav() {
             <Link  id="scan-itemnav" to="/books"><h3>Books</h3></Link>
           
             
+        </div>
         </div>
     )
 }

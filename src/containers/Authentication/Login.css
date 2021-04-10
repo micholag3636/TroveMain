@@ -14,6 +14,7 @@
     display: grid;
     place-items: center;
     height: 100vh;
+    width: 100%;
 
 }
 
@@ -172,3 +173,12 @@
     bottom: 190px;
 }
 
+
+@media(max-width:  800px){
+    .login{
+        height: 130vh;
+        width: 130vw;
+    }
+
+
+}

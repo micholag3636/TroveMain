@@ -34,7 +34,11 @@
 #map-box{
     width: 100%;
    
-    height: 40vh;
+    margin: 0px;
+    z-index: -1;
+   
+    height: 100vh;
+ 
 }
 
 .special{
@@ -45,6 +49,7 @@
 .mapimg{
     height: 80px;
     width: auto;
+ 
 }
 .imgob{
     border-radius: 8px;
@@ -67,19 +72,20 @@
 
 #booksid{
     margin-left: 23px;
-    margin-bottom: 15px;
+  
 }
 
 .books-sect2{
+    background-color: white;
     display: grid;
+    justify-items: center;
+ 
     grid-template-columns: repeat(4, 1fr);
    
 
     
    
 }
-
-
 
 
 
@@ -124,4 +130,101 @@
       }
     }
     
+
+
     
+
+
+.openbookbox{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+
+}
+
+.openbook{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 999px;
+    height: 60px;
+    width: 60px;
+    background-color: #BF505A;
+    margin-right: 40px;
+    
+
+}
+
+.openbook2{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 999px;
+    height: 60px;
+    width: 60px;
+
+    background-color: #044A59;
+    margin-right: 25px;
+}
+
+
+
+
+/*
+
+<nav className="nav-bot">
+
+                
+<Link  id="scan-item" to="/scan"><h3><AddIcon /></h3></Link>
+<Link   id="scan-item" to="/history"><h3><HistoryIcon /></h3></Link>
+<Link  id="scan-item" to="/books"><h3><LibraryBooksIcon /></h3></Link>
+
+</nav>
+
+*/
+
+.book4main{
+    background-color: white;
+    z-index: 1;
+  
+  
+
+}
+
+.booksidl{
+    background-color: white;
+
+}
+
+#booksidl{
+    background-color: white;
+    margin-bottom: 0px;
+    margin-left: 28px;
+}
+
+
+
+@media (max-width: 800px) {
+    .openbook { 
+          display: flex;
+      }
+
+      .openbook2{
+          display: flex;
+      }
+
+      .openbookofscan{
+          display: flex;
+      }
+    }

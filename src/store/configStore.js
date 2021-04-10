@@ -3,8 +3,44 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import scannedItems from './reducers/scannedItems'
 
+
+
+
+
 // Initial value of redux state
 const isLoggedIn = false
+
+
+
+function saveToLocalStorage(state){
+  try{
+    const serializedState = JSON.stringify(change)
+    localStorage.setItem("state", serializedState)
+  } catch(e){
+    console.log(e)
+  }
+
+
+
+}
+
+function loadFromLocalStorage(){
+  try{
+    const serializedState = localStorage.getItem("state")
+    if (serializedState === null) return undefined
+    return JSON.parse(serializedState)
+  } catch(e){
+    console.log(e)
+    return undefined
+  }
+
+
+
+
+
+}
+
+
 
 
 // Redux to true action
@@ -70,8 +106,15 @@ const rootReducer = combineReducers({
   change: change
 })
 
+const persistedState = loadFromLocalStorage()
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
+
+
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+
+store.subscribe(() => saveToLocalStorage(store.getState()))
 
 export default store

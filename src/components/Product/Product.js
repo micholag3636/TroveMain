@@ -67,7 +67,7 @@ function Product(props) {
 
   switch(error.code){
     case error.PERMISSION_DENIED:
-      alert("User denided the request for Geolocation")
+      alert("Request for geolocation was denied")
       break;
       case error.POSITION.UNAVAILABLE:
         alert("Location information is unavailable")
@@ -118,6 +118,8 @@ function Product(props) {
 
    const postDataHandler = (e)=>{
      getLocation()
+     props.click ? props.click : props.view
+     alert("Your Book Has Been Added To The Library")
     e.preventDefault()
   
    
@@ -178,14 +180,14 @@ function Product(props) {
 
       // All book data which will be displayed to the userr
       <Fragment>
-        <div>
+        <div id="fullpageproduct">
 
          
 
           <div className="product-img">
         
              
-             <img src={props.item.product_image} />
+             <img className="imagebigscreen" src={props.item.product_image} />
 
              <div>
 
@@ -195,8 +197,15 @@ function Product(props) {
 
       <button id="buttonaddednav" className="fixp" onClick={postDataHandler
       }>  <Link id="addlink" to="/added" >Add To Library</Link> </button>
-        
 
+
+
+<button id="buttonaddednav"
+          onClick={props.click ? props.click : props.view}
+         >{props.click ? 'Scan Again' : 'View History' }</button>
+
+
+        
 
      
 
@@ -207,7 +216,7 @@ function Product(props) {
 
 
           </div>
-        <table className="table table-striped">
+        <table  id="tableback" className="table table-striped">
           <tbody>
             <tr>
               <td>Barcode Number</td>
@@ -222,10 +231,14 @@ function Product(props) {
               <td>Category</td>
               <td>{props.item.category}</td>
             </tr>
+
+             
             <tr>
               <td>Description</td>
               <td id="descriptionbook">{props.item.description}</td>
             </tr>
+            
+
           </tbody>
         </table> 
 
@@ -240,7 +253,11 @@ function Product(props) {
          id="scan-item"  >{props.click ? 'Scan Again' : 'View History' }</button>
 
       <button className="fixp" onClick={postDataHandler}id="scan-item">  <Link id="addlink" to="/added" >Add To Library</Link> </button>
-         <Link className="fixp" id="scan-item" to="/history"><h3><HistoryIcon /></h3></Link>
+
+
+
+    { /* <Link className="fixp" id="scan-item" to="/history"><h3><HistoryIcon /></h3></Link> */  }
+    
 
 
      
