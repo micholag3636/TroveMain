@@ -1,18 +1,18 @@
 import React, {useState, useEffect, Component} from 'react'
-import "./Main.css"
+
 import {Link} from "react-router-dom"
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from "react-google-maps"
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import HistoryIcon from '@material-ui/icons/History';
 import AddIcon from '@material-ui/icons/Add';
 import axios from "axios";
-import BookDisplay from '../../containers/Books/BookDisplay.js'
+import BookDisplay from './BookDisplay.js'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import MenuIcon from '@material-ui/icons/Menu';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 
 // Home page of App
-class Map extends Component{
+export class Map extends Component{
 
 
     
@@ -109,7 +109,7 @@ class Map extends Component{
 
   
         <div className="mainfull">
-            <GoogleMap className="googlemapisapi" defaultZoom={6} defaultCenter={{lat:this.state.lat, lng: this.state.long}}
+            <GoogleMap className="googlemapisapi" defaultZoom={15} defaultCenter={{lat:this.props.lat, lng: this.props.long}}
         
         >
              {this.state.results.map((result) => {return (
@@ -133,13 +133,11 @@ class Map extends Component{
             )})}
 
             {this.state.selectedBook && (
-                <InfoWindow  className="mapimgmap"  position={{lat: this.state.selectedBook.latitude, lng: this.state.selectedBook.longitude}}  onCloseClick={() => {
+                <InfoWindow    position={{lat: this.state.selectedBook.latitude, lng: this.state.selectedBook.longitude}}  onCloseClick={() => {
                     this.setState({selectedBook: null})
                 }}>
-                  
                    
-                  <img className="mapimg" src={this.state.selectedBook.image} />
-            
+            <img className="mapimg" src={this.state.selectedBook.image} />
 
                 </InfoWindow>
 
@@ -253,7 +251,7 @@ name={result.name}
              }
             }
 
-const WrappedMap = withScriptjs(withGoogleMap(Map))
+export const WrappedMap = withScriptjs(withGoogleMap(Map))
 
 
 
@@ -269,6 +267,8 @@ function Main() {
             loadingElement={<div style={{height: "100%"}}></div>}
             containerElement={<div style={{height: "100%"}}></div>}
             mapElement={<div style={{height: "100%"}}></div>}
+            lat={props.lat}
+            long={props.long}
             
             />
             </div>
@@ -286,4 +286,3 @@ function Main() {
 }
 
 export default Main
-

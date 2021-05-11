@@ -11,9 +11,17 @@ import Product from '../../components/Product/Product'
 import {clearScanned, setItem, deleteItem} from '../../store/actions/index'
 import PostAddIcon from '@material-ui/icons/PostAdd';
 import MapIcon from '@material-ui/icons/Map';
+import Spinner from '../../components/Spinner/Spinner'
+import Main from "./Mains.js"
+import {WrappedMap} from "./Mains.js"
 
 
 //Class to display books contained in database
+
+
+
+
+
 class Books extends Component{
     constructor(props){
 
@@ -30,8 +38,25 @@ class Books extends Component{
             results:[],
             selectedBook: null,
             loading: false,
-            input: ""
+            input: "",
+            lat:1,
+            long: 2,
+            on: false,
+            lat2: 1,
+            long2: 2,
+            d: null,
         }
+        this.getLocation = this.getLocation.bind(this)
+        
+
+       /*
+      
+        this.getDistanceOneToOne = this.getDistanceOneToOne.bind(this)
+        */
+      
+     
+       
+     
 
 
 
@@ -57,6 +82,13 @@ class Books extends Component{
 
     
     componentDidMount(){
+        this.getLocation()
+        this.setState({loading: true})
+        setTimeout(() => {
+            this.setState({loading: false})
+        }, 2000)
+
+
         
         
         axios.get("https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/" + ".json")
@@ -127,19 +159,146 @@ class Books extends Component{
 
 
   
+    getLocation(){
+
+
+        const getCoordinates = (position) => {
+          this.setState({lat2: position.coords.latitude})
+          this.setState({long2: position.coords.longitude})
+       
+         
+          console.log(this.state.lat2)
+          console.log(this.state.long2)
+        }
+       
+           
+       
+      
     
     
+     
+    
+        const handleLocationError = (error) =>{
+    
+          switch(error.code){
+            case error.PERMISSION_DENIED:
+              console.log("Not on")
+              break;
+              case error.POSITION.UNAVAILABLE:
+                alert("Location information is unavailable")
+                break;
+                case error.TIMEOUT:
+                  alert("The request to get user location timed out")
+                  break;
+                  case error.UNKNOWN_ERROR:
+                    alert("An unknown error occured")
+                    break;
+                    default:
+                      alert("An unknown error occured")
+          }
+        
+      
+        }
+        
+      
+    
+    
+        if (navigator.geolocation) {
+    
+    
+    
+    
+          
+     
+    
+          navigator.geolocation.getCurrentPosition(getCoordinates, handleLocationError)
+        } else {
+           alert("Geolocation is not supported by this browser.");
+        }
+    
+        
+    
+    
+    
+      }
+
+     
+    
+      /*
+
+
+       async getDistanceOneToOne(lat1, lng1, lat2, lng2)
+      {
+         const Location1Str = lat1 + "," + lng1;
+         const Location2Str = lat2 + "," + lng2;
+  
+         let ApiURL = "https://maps.googleapis.com/maps/api/distancematrix/json?";
+  
+         let params = `origins=${Location1Str}&destinations=${Location2Str}&key=${AIzaSyCBhwfufHb9hz9LrymTMK_Sy9BH9gCh2_c}`; // you need to get a key
+         let finalApiURL = `${ApiURL}${encodeURI(params)}`;
+  
+         let fetchResult =  await fetch(finalApiURL); // call API
+         let Result =  await fetchResult.json(); // extract json
+  
+         return console.log(Result.rows[0].elements[0].distance);
+      }
+      */      
+     
 
     render(){
+
+
+        
+
+
+
+
+
+        
+
+
+
+  
 
     
 
         //Map through each book and get its image, name and barcode
         return(
+
+
+<div>
+    {this.state.on ?  <div className="main">
+            
+
+            <div id="map-box">
+            
+                
+            <WrappedMap googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCBhwfufHb9hz9LrymTMK_Sy9BH9gCh2_c"} 
+            loadingElement={<div style={{height: "100%"}}></div>}
+            containerElement={<div style={{height: "100%"}}></div>}
+            mapElement={<div style={{height: "100%"}}></div>}
+            lat={this.state.lat}
+            long={this.state.long}
+            
+            />
+            </div>
+
+
+
+
+
+
+         
+            
+        </div> : 
+
             
       
          
             <div className="themainbooks">
+
+
+                
                 
             
 
@@ -156,33 +315,88 @@ class Books extends Component{
             <div className="books-sect">
 
 
-          
+
+
+           
               
                 {this.state.results.map((result, i) => {
+                  /*
+                       {this.getDistanceOneToOne(this.state.lat2,this.state.long2,result.latitude,result.longitude)}
+                       */
+                   
+                    
+                    
+               
+                    
 
                     return(
-                        <div>
+                   
+                        <div >
+
+                            {this.state.loading ?  <Spinner /> :
                             
                  
-                    <BookDisplay
-                    barcode={result.barcode}
-         
+                            <button className="bookbut" onClick={() => {
+                                this.setState({lat: result.latitude})
+                                this.setState({long: result.longitude})
+                                setTimeout(() =>{
+
+                                    this.setState({on: true})
+       
+     
+                                   console.log(this.state.lat)
+                                   console.log(this.state.long)
+                            
+                                  },100)
+                               
+                              }}>
+                              
+
+
+                                
+                            
+
+                              <BookDisplay
+        barcode={result.barcode}
+
+
+        
+        image={result.image}
+        name={result.name}
+        d={this.state.d}
+        latitude={result.latitude}
+        longitude={result.longitude}
+        
+        
+
+        
+        /> 
                     
-                    image={result.image}
-                    name={result.name}
                     
 
-                    
-                    />
+
+
+
+                        
+                    </button>
+                  
+                
                     
                         
                    
 
 
-        
+                            }
+                            
+                  
                     
-                    </div>)
+                    </div>
+                        
+                    
+                    )
+                         
                 })}
+                
 
 
             </div>
@@ -196,6 +410,8 @@ class Books extends Component{
         
           </nav>
             </div>
+    }
+            </div>
         )
 
 
@@ -205,6 +421,8 @@ class Books extends Component{
 
 
 
+ 
+ 
 
 }
 
@@ -223,5 +441,11 @@ const mapStateToProps = (state, ownProps) => {
       deleteItem: (i) => { dispatch( deleteItem(i)) }
     }
   }
+
+
+
+
+
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Books)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Books)

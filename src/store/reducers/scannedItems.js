@@ -1,4 +1,3 @@
-
 const initialState = {
   spinner: false,
   startScanning: false,
@@ -30,7 +29,7 @@ const scannedItems = (state = initialState, action) => {
         invalidBarcode: false,
         noApi: false,
         spinner: false,
-        startScanning: false,
+        startScanning: true,
         scannedItems: [...state.scannedItems, action.payload]
       }
     case 'INVALID_BARCODE':
@@ -39,7 +38,8 @@ const scannedItems = (state = initialState, action) => {
         productScanned: null,
         spinner: false,
         invalidBarcode: true,
-        noApi: false
+        noApi: false,
+        startScanning: false
       }
     case 'NO_API_KEY':
       return {

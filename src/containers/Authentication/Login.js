@@ -7,9 +7,11 @@ import "./Login.css"
 import {Link} from "react-router-dom"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
- 
 
+/*
  
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+ */
 
 
 function Login(props) {
@@ -51,7 +53,7 @@ function Login(props) {
 
 
     return (
-        <div>
+        <div id="logsbox" >
               <div className="login">
             <div className="login__logo">
 
@@ -75,9 +77,9 @@ uiConfig={uiConfig}
 firebaseAuth={firebase.auth()}
 />
 
-
+<h5 id="signupfor"><Link id="links" to="/">Sign Up For Trove</Link></h5> 
   </div>
- <h5 id="signupfor"><Link id="links" to="/">Sign Up For Trove</Link></h5> 
+
    </form>
    
 

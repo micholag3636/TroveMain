@@ -1,3 +1,8 @@
+#scansbox{
+ overflow: hidden;
+}
+
+
 
 
 video {
@@ -6,10 +11,19 @@ video {
  
   margin-bottom: 250px;
   position: relative;
-  bottom: 310px;
+  bottom: 290px;
  
 
  
+}
+
+@media(max-width: 800px){
+  video{
+    bottom: 320px;
+  }
+
+
+
 }
 canvas{
   width: calc(100%);
@@ -22,30 +36,26 @@ canvas{
 
 }
 
-
-
-
 .onscanner{
+
   z-index: 3;
-  height: 30%;
   width: auto;
- 
+  height: 18em;
   position: relative;
+
+ 
+  
+  top: 6em;
  
   animation-name: image;
   animation-duration: 3s;
-  left: 43%;
+  left: 41%;
+
   
   
 
 
 }
-
-#sbox{
-  height: 100%;
-  width: 100%;
-}
-
 
 
 @keyframes image{
@@ -96,9 +106,10 @@ canvas{
     
     
    
+    left: 12em;
+    margin-right: 10em;
     
-    
-        left: 38%;
+      
     }
   }
 
@@ -106,11 +117,12 @@ canvas{
 
 @media (max-width: 815px) {
   .onscanner { 
+    top: 3em;
 
 
   
- 
-        left: 23%;
+ left: 5%;
+     
       
     }
   }
@@ -118,3 +130,100 @@ canvas{
 
 
   
+
+
+  #addednab{
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+   
+    z-index: 5;
+  
+  }
+
+  #scansmap{
+    display: none;
+    position: relative;
+  
+    z-index: 5;
+top: 12em;
+
+
+  
+
+display: none;
+flex-direction: row;
+justify-content: center;
+color: white;
+align-items: center;
+border: none;
+border-radius: 40px;
+width: 150px;
+height: 80px;
+
+background-color: #232323;
+margin-bottom: 20px;
+z-index: 5;
+
+
+
+
+
+
+
+    
+  }
+
+.scansbuttonb{
+z-index: 6;
+position: relative;
+height: 60px;
+width: 150px;
+border-radius: 65px;
+border: none;
+background-color: #232323;
+color: white;
+left: 29%;
+top: 14em;
+display: none;
+
+}
+.mapicon{
+  color: white;
+}
+
+.mapicon{
+  color: white;
+
+}
+#linkmap{
+  color: white;
+}
+
+
+
+#mapofbut{
+  color: white;
+}
+
+  @media(max-width: 800px){
+
+    #scansmap{
+      display: flex;
+   
+    }
+    #addednab{
+      display: flex;;
+    }
+
+    .scansbuttonb{
+      display: inline-block;
+    }
+  
+  
+  }
+

@@ -5,6 +5,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Nav from "./components/Navigation/Nav.js"
 
 import Scan from './containers/Scan/Scan'
+import Scantwo from "./containers/Scan/Scantwo"
 import History from './containers/History/History'
 import Main from "./containers/Main/Main.js"
 import Books from "./containers/Books/Books.js"
@@ -39,10 +40,14 @@ class App extends Component {
       <Switch>
              <Route exact path='/added' component={added}/>
         <Route exact path='/history' component={History}/>
+       
+
+
         <Route exact path='/scan'  component={Scan}/>
         <Route exact path='/books'  component={Books}/>
         <Route exact path='/' component={Main}/>
         <Route  exact path='/main' component={Main}/>
+        <Route  exact path='/scans' component={Scantwo}/>
         
         
 

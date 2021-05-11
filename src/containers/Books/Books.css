@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: row;
-    margin: 10px;
+ 
  
 
 
@@ -129,4 +129,17 @@ flex-wrap: row;
 
 .themapbooks{
     color: white;
+}
+
+#displaybookofbooks{
+    height: 220px;
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px 6px #00000016;
+   
+}
+
+.bookbut{
+    border: none;
+    background-color: transparent;
 }

@@ -84,6 +84,7 @@ function Signup(props){
 
 
 return (
+    <div id="logsbox">
     <div className="login">
         <div className="login__logo">
 
@@ -92,7 +93,7 @@ return (
             <form onSubmit={signup}>
             <div id="formbox">
 
-                <h1 id="signup">Sign Up</h1>
+            <h1 id="signup">Sign Up</h1>
                 <h5 id="auser">Existing User? <Link to="/main"id="singl" className="signinto">Sign In</Link></h5>
                 <div id="name">
            
@@ -132,6 +133,7 @@ firebaseAuth={firebase.auth()}
         </div>
        
         
+    </div>
     </div>
 )
 

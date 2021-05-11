@@ -50,6 +50,10 @@
     height: 80px;
     width: auto;
  
+   margin-right: 10px;
+   margin-bottom: 10px;
+   z-index: 5
+ 
 }
 .imgob{
     border-radius: 8px;
@@ -163,6 +167,14 @@
 
 }
 
+.openbook:active{
+    color: white;
+}
+
+.openbook:focus{
+    color: white;
+}
+
 .openbook2{
     display: none;
     flex-direction: row;
@@ -228,3 +240,10 @@
           display: flex;
       }
     }
+
+.mapimgmap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

@@ -7,6 +7,7 @@ import scannedItems from './reducers/scannedItems'
 
 
 
+
 // Initial value of redux state
 const isLoggedIn = false
 
@@ -14,7 +15,7 @@ const isLoggedIn = false
 
 function saveToLocalStorage(state){
   try{
-    const serializedState = JSON.stringify(change)
+    const serializedState = JSON.stringify(state)
     localStorage.setItem("state", serializedState)
   } catch(e){
     console.log(e)
@@ -104,15 +105,17 @@ const change = (state = isLoggedIn,action) => {
 const rootReducer = combineReducers({
   scanned: scannedItems,
   change: change
+ 
 })
 
 const persistedState = loadFromLocalStorage()
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(rootReducer,persistedState,composeEnhancers(applyMiddleware(thunk)))
 
 
 store.subscribe(() => saveToLocalStorage(store.getState()))

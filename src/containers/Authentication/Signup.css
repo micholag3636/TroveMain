@@ -1,33 +1,17 @@
 
 
-.login > div > img {
-    object-fit: contain;
-    height: 150px;
-}
 
-.login > div {
-    display: flex;
-    flex-direction: column;
-   
-}
 
 .login {
-    display: grid;
-    place-items: center;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
-
-     background-color: #044A59;
+    background-color: #044A59;
     
     
-
-}
-@media(max-width:  800px){
-    .login{
-        height: 130vh;
-        width: 130vw;
-    }
-
 
 }
 
@@ -35,22 +19,24 @@
 
 .authother{
     position: relative;
-    bottom: 150px;
+   bottom: 240px;
    
 }
+#logsbox{overflow: hidden;}
 
 
-@media (max-width: 1500px) {
-    .authother { 
-          margin-top: 210px;
-      }
+
+@media(max-width: 800px){
+    .authother{
+        margin-top: 60px;
     }
+}
     
 
 
 #formbox h1{
     color: white;
-    margin-right: 313px;
+  
    
 }
 
@@ -77,7 +63,8 @@
 
 #formbox button{
     height: 40px;
-    width: 466px;
+    width: 60vw;
+    max-width: 405px;
    margin: 10px;
    background-color: #BF505A;
 }
@@ -93,19 +80,34 @@
 
 #formbox{
     width: 100%;
-    height: 80vh;
+    height: 100%;
     background-color: transparent;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 300px;
 }
+
+
+
+@media(max-width: 800px){
+
+    #formbox{
+        width: 100%;
+
+
+    }
+
+   
+}
+
 
 #fname{
     height: 40px;
-    width: 405px;
+    width: 80vw;
+    max-width: 405px;
     margin: 10px;
 
     border: none;
@@ -123,7 +125,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 485px;
+    width: 425px;
     height: 100px;
     margin-top: 30px;
  }
@@ -148,7 +150,7 @@
 
 #signup{
     
-    margin-right: 275px;
+    margin-right: 307.5px;
     color: white;
     font-weight: 400;
 }
@@ -168,7 +170,8 @@
 
 #name input{
     height: 40px;
-    width: 405px;
+ 
+    
    
     margin-bottom: -10px;
 }
@@ -176,19 +179,61 @@
 .input2{
     height: 60px;
   
-    width: 405px;
+    width: 60vw;
+    max-width: 405px;
     margin: 10px;
 
 }
 
 #formbox input{
     height: 40px;
-    width: 466px;
+    width: 60vw;
+    max-width: 405px;
    margin: 10px;
+
+
+
 }
 
 #buttonsup{
     height: 40px;
-    width: 466px;
+    width: 60vw;
+    max-width: 405px;
    margin: 10px;
+}
+
+
+
+
+
+@media(max-width: 600px){
+    #name{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+
+    #name input{
+        width: 28.5vw;
+
+    }
+
+
+    
+
+
+    #signup{
+        margin-right: 181px;
+    }
+   
+    #auser{
+        margin-right:125px;
+    }
+   
+
+
+    
 }

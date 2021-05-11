@@ -1,19 +1,10 @@
 
-.login > div > img {
-    object-fit: contain;
-    height: 150px;
-}
 
-.login > div {
-    display: flex;
-    flex-direction: column;
-   
-}
 
 .login {
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 120vh;
     width: 100%;
 
 }
@@ -34,9 +25,10 @@
 }
 
 #formbo{
-    width: 500px;
-    height: 600px;
+  width: 100%;
+    height: 100%;
     background-color: #044A59;
+  
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -45,13 +37,25 @@
     margin-bottom: 50px;
 }
 
+@media(max-width: 800px){
+
+    #formbo{
+        width: 100%;
+
+
+    }
+
+   
+}
+
 #formbo button{
     background-color: #BF505A;
 }
 
 #fname{
     height: 30px;
-    width: 405px;
+    width: 70vw;
+    max-width: 405px;
     margin: 10px;
     border: none;
 
@@ -65,12 +69,15 @@
 
 #lname{
     height: 40px;
-    width: 405px;
+    width: 60vw;
+    max-width: 405px;
     margin: 10px;
 
     border: none;
 
 }
+
+
 
 
 #hname{
@@ -80,6 +87,9 @@
 
     margin-right: -4px;
     margin-left: -4px;
+    width: 100%;
+   
+    max-width: 380px;
  
 
     
@@ -89,17 +99,7 @@
 
 
 
-#name{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 485px;
-    height: 100px;
-    margin-top: 30px;
 
-    
-}
 
 #llogoimg{
     position: relative;
@@ -115,27 +115,15 @@
 
     margin-right: 325px;
     height: 38px;
-    width: 90px;
+ 
     border: none;
     border-radius: 5px;
     color: white;
     background-color: #3B5999;
 }
 
-#signup{
 
-    margin-right: 275px;
-    color: #526BA2;
-    font-weight: 400;
-}
 
-#auser{
-    color: #8C9DC3;
-    margin-top: 20px;
-    
-    margin-right: 255px;
-
-}
 
 #singl{
     
@@ -144,7 +132,8 @@
 
 #lbut{
     height: 40px;
-    width: 405px;
+    width: 60vw;
+    max-width: 405px;
     margin: 10px;
     background-color: #577FBC;
     border: none;
@@ -157,9 +146,10 @@
     color: white;
     font-weight: 400;
     font-size: 13px;
-    margin-left: 183px;
+  
     position: relative;
-    bottom: 160px;
+   
+    bottom: 130px;
     
 }
 
@@ -174,11 +164,5 @@
 }
 
 
-@media(max-width:  800px){
-    .login{
-        height: 130vh;
-        width: 130vw;
-    }
 
 
-}
