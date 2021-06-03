@@ -58,6 +58,19 @@ canvas{
 }
 
 
+.onscanner2{
+  z-index: 3;
+  width: auto;
+  height: 18em;
+  position: relative;
+  top: 6em;
+ 
+  animation-name: image;
+  animation-duration: 3s;
+
+
+}
+
 @keyframes image{
 
   0%{
@@ -97,9 +110,6 @@ canvas{
 
 
 
-
-
-
 @media (max-width: 1200px) {
   .onscanner { 
     bottom: 12%;
@@ -115,9 +125,9 @@ canvas{
 
 
 
-@media (max-width: 815px) {
+@media(max-width: 569px) {
   .onscanner { 
-    top: 3em;
+ 
 
 
   
@@ -125,35 +135,43 @@ canvas{
      
       
     }
-  }
 
+  
 
 
   
 
 
-  #addednab{
+  #addedna{
+
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     height: 100%;
     position: relative;
    
     z-index: 5;
+
   
   }
+  @media(max-width: 700px){
+
+    #scansmap{
+    top: 46vh;
+      
+    }
+  
+  
+  }
+}
 
   #scansmap{
-    display: none;
+   
+      
     position: relative;
-  
-    z-index: 5;
-top: 12em;
-
-
-  
+    top: 43vh;
 
 display: none;
 flex-direction: row;
@@ -163,11 +181,13 @@ align-items: center;
 border: none;
 border-radius: 40px;
 width: 150px;
-height: 80px;
+height: 60px;
 
 background-color: #232323;
-margin-bottom: 20px;
+
 z-index: 5;
+animation-name: image;
+margin: 0;
 
 
 
@@ -189,7 +209,7 @@ background-color: #232323;
 color: white;
 left: 29%;
 top: 14em;
-display: none;
+display: flex;
 
 }
 .mapicon{
@@ -213,11 +233,11 @@ display: none;
   @media(max-width: 800px){
 
     #scansmap{
-      display: flex;
+      display:flex;
    
     }
-    #addednab{
-      display: flex;;
+    #addedna{
+      display: flex;
     }
 
     .scansbuttonb{
@@ -226,4 +246,9 @@ display: none;
   
   
   }
-
+#imgbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

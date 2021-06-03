@@ -37,10 +37,44 @@
     margin: 0px;
     z-index: -1;
    
-    height: 100vh;
+  
  
 }
 
+#map-box2{
+    width: 100%;
+   
+    margin: 0px;
+    z-index: -1;
+   
+    height: 100vh;
+
+}
+
+#map-box1{
+    width: 100%;
+   
+    margin: 0px;
+    z-index: -1;
+   
+   
+ 
+
+}
+.butnav:focus{
+    outline: none;
+    border: none;
+}
+
+.butnav:active{
+    outline: none;
+    border: none;
+}
+
+.butnav{
+    outline: none;
+    border: none;
+}
 .special{
     position: fixed;
     bottom: 0px;
@@ -60,21 +94,23 @@
 }
 
 .nearbybooks{
-    height: 60vh;
+    height: 100vh;
     background-color: white;
     width: 100%;
 }
 
 .googlemapsapi{
     width: 100%;
+    height: 30%;
 }
 
 .mainfull{
     width: 100%;
+    height: 100%;
     background-color:  white;
 }
 
-#booksid{
+#booksidl{
     margin-left: 23px;
   
 }
@@ -84,7 +120,7 @@
     display: grid;
     justify-items: center;
  
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
    
 
     
@@ -96,7 +132,7 @@
 
 @media (max-width: 1232px){
     .books-sect2{
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(8, 1fr)
     }
 
 
@@ -107,7 +143,7 @@
 
 @media (max-width: 950px){
     .books-sect2{
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(6, 1fr)
     }
 
 
@@ -119,7 +155,7 @@
 
 @media (max-width: 630px){
     .books-sect2{
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(3, 1fr)
     }
 
 
@@ -128,10 +164,24 @@
 }
 
 
+
+
+@media (max-width: 360px){
+    .books-sect2{
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+
+
+
+}
+
 @media (max-width: 800px) {
     .books-sects { 
           flex-direction: row;
       }
+
+     
     }
     
 
@@ -167,6 +217,11 @@
 
 }
 
+.openbookbox > button:active{
+    outline: none;
+
+}
+
 .openbook:active{
     color: white;
 }
@@ -193,6 +248,8 @@
 
 
 
+
+
 /*
 
 <nav className="nav-bot">
@@ -207,8 +264,14 @@
 */
 
 .book4main{
+    
     background-color: white;
     z-index: 1;
+   
+   
+ 
+    
+ 
   
   
 
@@ -216,15 +279,36 @@
 
 .booksidl{
     background-color: white;
+    
 
 }
 
 #booksidl{
     background-color: white;
     margin-bottom: 0px;
-    margin-left: 28px;
+    margin-left: 11px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 900px;
+    font-size: 1.8em;
+ 
 }
 
+
+@media(max-width: 900px){
+
+    #booksidl{
+        left: 23px;
+    }
+}
+
+
+@media(max-width: 1200px){
+
+    
+    #booksidl{
+        left: 32px;
+    }
+}
 
 
 @media (max-width: 800px) {
@@ -239,6 +323,14 @@
       .openbookofscan{
           display: flex;
       }
+      #booksidl{
+          position: relative;
+          left: 0px;
+      }
+
+      .openbookbut{
+          display: flex;
+      }
     }
 
 .mapimgmap{
@@ -246,4 +338,105 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.mainnbook{
+    height: 100vh;
+}
+
+.searchboxbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 5;
+    margin: 0;
+    position: relative;
+    top: 4em;
+    height: 0px;
+  
+    
+}
+
+
+
+.searchbox{
+    width: 320px;
+    height: 50px;
+    background-color: white;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px 6px #00000016;
+    margin-bottom: 15px;
+
+    
+}
+
+
+
+
+.searchbox > i {
+    font-size: 17px;
+    color: #777;
+    margin-right: 2px;
+    background-color: white;
+    height: 40px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    justify-content: center;
+    position: relative;
+    left: 0.5em;
+    width: 30px;
+   
+
+}
+
+
+
+
+.allbooks{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 900px;
+    font-size: 2.5em;
+}
+
+.searchbox > input{
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-left: 10px;
+
+}
+
+.openbookbut{
+display: none;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 999px;
+    height: 60px;
+    width: 60px;
+    background-color: #BF505A;
+    margin-right: 40px;
+}
+
+#openbookbutid:active{
+    outline: none;
+    border: none;
+}
+
+
+#openbookbutid:focus{
+    outline: none;
+    border: none;
 }

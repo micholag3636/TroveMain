@@ -180,20 +180,19 @@ class Scanner extends Component {
      <Fragment>
       <div id="barcodeScan"> 
 
-<img src="https://i.postimg.cc/85fFDRhK/Screenshot-147-1-removebg-preview.png" className="onscanner"></img>
+
+<div id="imgbox">
+<img src="https://i.postimg.cc/85fFDRhK/Screenshot-147-1-removebg-preview.png" className="onscanner2"></img>
+<Link  id="scansmap" className="openbookofscan" to="/"><MapIcon className="mapicon" />Map</Link>
+
+</div>
 
 
 
 
 
 </div>
-<nav id="addedna">
-    <Link  id="scansmap" className="openbookofscan" to="/"><MapIcon className="mapicon" />Map</Link>
- 
-  
-   
 
-    </nav>
 
 
 

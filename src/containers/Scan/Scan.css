@@ -156,3 +156,139 @@ margin-bottom: 15%;
   .geoerror h1{
     margin-bottom: 100px;
   }
+
+  .beginbk{
+   
+    width: 100vw;
+    height: 100vh;
+    max-width: 600px;
+    animation: appear 2s ease-in;
+    display: none;
+ 
+
+
+  }
+.beginbk2{
+
+   
+  width: 50%;
+  height: 50%;
+  
+  animation: appear 2s ease-in;
+
+
+}
+
+@media(max-width: 800px){
+  .beginbk2{
+    display: none;
+  }
+  .beginbk{
+    display: flex;
+  }
+
+
+
+}
+  
+@keyframes appear{
+
+  0%{
+    opacity: 0%;
+  }
+
+  15%{
+    opacity: 15%
+  }
+
+  20%{
+    opacity: 30%
+  }
+
+  25%{
+    opacity: 45%;
+  }
+
+  30%{
+    opacity: 50%;
+  }
+
+  35%{
+    opacity: 55%;
+  }
+
+  40%{
+    opacity: 60%;
+  }
+  45%{
+    opacity: 65%;
+  }
+  50%{
+    opacity: 70%;
+  }
+
+  55%{
+    opacity: 75%;
+  }
+  60%{
+    opacity: 80%;
+  }
+
+  65%{
+    opacity: 85%;
+  }
+
+  70%{
+    opacity: 90%;
+  }
+  75%{
+    opacity: 95%
+  }
+
+  80%{
+    opacity: 100%;
+  }
+
+
+
+
+
+}
+  .beginbkup{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+
+  }
+
+  body{
+    background-color: #F1EAFF;
+  }
+
+  .bkback{
+    width: 100%;
+    height: 100%;
+    background-color: #F1EAFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.locerror{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.locerror > img{
+  width: 300px;
+  height: 300px;
+ margin-top: 120px;
+}

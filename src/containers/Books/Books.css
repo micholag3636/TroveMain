@@ -9,7 +9,9 @@
 
 
 }
-
+body{
+    background-color: white;
+}
 .image-box{
  display: flex;
  flex-direction: row;
@@ -21,7 +23,7 @@ flex-wrap: row;
 
 .books-sect{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
 
     
@@ -40,6 +42,9 @@ flex-wrap: row;
 .themainbooks{
     max-width: 100%;
     margin: 1rem auto;
+    height: 100%;
+    width: 100%;
+    background-color: white;
 
 
 
@@ -48,11 +53,13 @@ flex-wrap: row;
 
 .all-book{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     color: black;
+    background-color: white;
+    height: 100%;
 }
 
 
@@ -83,7 +90,7 @@ flex-wrap: row;
 
 @media (max-width: 1232px){
     .books-sect{
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(6, 1fr)
     }
 
 
@@ -94,7 +101,7 @@ flex-wrap: row;
 
 @media (max-width: 950px){
     .books-sect{
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(5, 1fr)
     }
 
 
@@ -106,7 +113,7 @@ flex-wrap: row;
 
 @media (max-width: 630px){
     .books-sect{
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(3, 1fr)
     }
 
 
@@ -132,10 +139,11 @@ flex-wrap: row;
 }
 
 #displaybookofbooks{
-    height: 220px;
-    width: 160px;
+    height: 170px;
+    width: 109px;
     border-radius: 4px;
     box-shadow: 0px 4px 6px 6px #00000016;
+    margin: 8px;
    
 }
 

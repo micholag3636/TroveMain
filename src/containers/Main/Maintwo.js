@@ -6,11 +6,10 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import HistoryIcon from '@material-ui/icons/History';
 import AddIcon from '@material-ui/icons/Add';
 import axios from "axios";
-import BookDisplay from './BookDisplay.js'
+import BookDisplay from '../Books/BookDisplay.js'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import MenuIcon from '@material-ui/icons/Menu';
 import PostAddIcon from '@material-ui/icons/PostAdd';
-import MapIcon from '@material-ui/icons/Map';
 
 // Home page of App
 export class Map extends Component{
@@ -37,7 +36,6 @@ export class Map extends Component{
             zoom: 6,
             lat: 55.3617609,
             long: -3.4433238,
-            search: ""
 
         }
     
@@ -66,11 +64,11 @@ export class Map extends Component{
         .then(response => {
             console.log(response.data)
             const fetchedResults = [];
-            for(let key in response.data){
+            for(let barcode in response.data){
                 fetchedResults.unshift(
                     {
-                        ...response.data[key],
-                        id:key
+                        ...response.data[barcode],
+                        id:barcode
                     }
 
                 )
@@ -103,18 +101,19 @@ export class Map extends Component{
     render(){
     return(
         <div>
-         
+
+  
 
 
         <div>
 
   
         <div className="mainfull">
-            <GoogleMap className="googlemapisapi" defaultZoom={15} defaultCenter={{lat:this.props.lat, lng: this.props.long}}
+            <GoogleMap className="googlemapisapi" defaultZoom={25} defaultCenter={{lat:this.props.lat, lng: this.props.long}}
         
         >
              {this.state.results.map((result) => {return (
-                <Marker className="imgob" key={result.barcode} position={{lat: result.latitude, lng: result.longitude}}
+                <Marker className="imgob" key={result.key} position={{lat: result.latitude, lng: result.longitude}}
                 
                 onClick={() => {
                  
@@ -226,15 +225,6 @@ name={result.name}
 </div>
 
 
-<nav className="openbookbox">
-<Link to="/main" className="openbook"><MapIcon className="themapbooks"/></Link>
-
-
-              <Link to="/scan" className="openbook2"><PostAddIcon /></Link>
-              
-        
-          </nav>
-
           
 
 
@@ -252,16 +242,56 @@ name={result.name}
              }
             }
 
-export const WrappedMap = withScriptjs(withGoogleMap(Map))
+export const WrappedMap2 = withScriptjs(withGoogleMap(Map))
 
 
 
-function Main() {
+function Maintwo() {
+
+    const [size, Setsize] =  useState("35vh")
     return (
         <div className="main">
+
             
 
-            <div id="map-box2">
+<nav className="openbookbox">
+             
+             <button id="openbookbutid" className="butnav"  onClick={() => {size === "0vh" ? Setsize( "35vh") : Setsize( "0vh")}} className="openbook"><LibraryBooksIcon /></button>
+             
+             
+             <Link to="/scan" className="openbook2"><PostAddIcon /></Link>
+                           
+                     
+                       </nav>
+
+
+
+            {this.state.on ?  <div className="main">
+            
+
+            <div style={{height: size}} id="map-box">
+            
+                
+            <WrappedMap2 googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCBhwfufHb9hz9LrymTMK_Sy9BH9gCh2_c"} 
+            loadingElement={<div style={{height: "100%"}}></div>}
+            containerElement={<div style={{height: "100%"}}></div>}
+            mapElement={<div style={{height: "100%"}}></div>}
+            lat={this.state.lat}
+            long={this.state.long}
+            
+            />
+            </div>
+
+
+
+
+
+
+         
+            
+        </div> : 
+
+            <div style={{height: size}} id="map-box">
             
                 
             <WrappedMap googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCBhwfufHb9hz9LrymTMK_Sy9BH9gCh2_c"} 
@@ -273,7 +303,7 @@ function Main() {
             
             />
             </div>
-
+}
 
 
 
@@ -286,4 +316,4 @@ function Main() {
     )
 }
 
-export default Main
+export default Maintwo

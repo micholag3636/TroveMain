@@ -45,8 +45,12 @@ class Books extends Component{
             lat2: 1,
             long2: 2,
             d: null,
+            search: ""
         }
         this.getLocation = this.getLocation.bind(this)
+        this.updateSearch = this.updateSearch.bind(this)
+
+
         
 
        /*
@@ -75,6 +79,11 @@ class Books extends Component{
     
 
 
+    }
+
+
+    updateSearch(event){
+      this.setState({search: event.target.value.substr(0,30)})
     }
 
 
@@ -108,11 +117,11 @@ class Books extends Component{
 
 
 
-            for(let barcode in response.data){
+            for(let key in response.data){
                 fetchedResults.unshift(
                     {
-                        ...response.data[barcode],
-                        id:barcode
+                        ...response.data[key],
+                        id:key
                     }
 
                 )
@@ -147,6 +156,8 @@ class Books extends Component{
 
 
     }
+
+    
 
     
  
@@ -252,7 +263,13 @@ class Books extends Component{
 
 
 
+let filteredBooks = this.state.results.filter(
+  (result) => {
+    return result.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+  }
 
+
+)
 
         
 
@@ -270,7 +287,7 @@ class Books extends Component{
     {this.state.on ?  <div className="main">
             
 
-            <div id="map-box">
+            <div id="map-box2">
             
                 
             <WrappedMap googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCBhwfufHb9hz9LrymTMK_Sy9BH9gCh2_c"} 
@@ -305,9 +322,16 @@ class Books extends Component{
 
                 <div className="all-book">
 
-                 <h1>Books</h1>
+                 <h1 className="allbooks">All Books</h1>
+                 <div className="searchbox">
+                 <i className="searchicon" class="fas fa-search"></i>
+                 <input type="text"
+                 placeholder="Search"
+                 value={this.state.search}
+                 onChange={this.updateSearch.bind(this)}></input>
 
                 
+                 </div>
                  </div>
                
                 
@@ -319,7 +343,7 @@ class Books extends Component{
 
            
               
-                {this.state.results.map((result, i) => {
+                {filteredBooks.map((result, i) => {
                   /*
                        {this.getDistanceOneToOne(this.state.lat2,this.state.long2,result.latitude,result.longitude)}
                        */
@@ -331,7 +355,7 @@ class Books extends Component{
 
                     return(
                    
-                        <div >
+                        <div  key={result.key} >
 
                             {this.state.loading ?  <Spinner /> :
                             
@@ -363,7 +387,7 @@ class Books extends Component{
         
         image={result.image}
         name={result.name}
-        d={this.state.d}
+        key={result.key}
         latitude={result.latitude}
         longitude={result.longitude}
         

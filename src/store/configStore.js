@@ -64,8 +64,12 @@ export const toFalse = () =>{
 }
 
 
+
+
 // Reducer which sets redux state value to true when user signs up for the app
-const change = (state = isLoggedIn,action) => {
+
+const loc = false
+const change = (state = isLoggedIn, action) => {
 
   switch(action.type){
 
@@ -91,6 +95,37 @@ const change = (state = isLoggedIn,action) => {
 
  
 
+export const toLocation = () =>{
+  return{
+    type:"toLocation"
+
+  }
+
+}
+
+
+
+const changeloc = (state = loc,action) => {
+
+  switch(action.type){
+
+    case "toLocation": 
+    return state = true
+      
+
+      default: 
+      return state = state
+
+
+
+
+  }
+
+
+
+}
+
+
 
 
 
@@ -104,7 +139,8 @@ const change = (state = isLoggedIn,action) => {
 
 const rootReducer = combineReducers({
   scanned: scannedItems,
-  change: change
+  change: change,
+  changeloc: changeloc
  
 })
 

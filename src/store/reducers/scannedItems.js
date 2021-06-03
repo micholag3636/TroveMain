@@ -1,10 +1,11 @@
 const initialState = {
   spinner: false,
-  startScanning: false,
+  startScanning: true,
   scannedItems: [],
   productScanned: null,
   invalidBarcode: false,
-  noApi: false
+  noApi: false,
+  thisItem: []
 }
 
 const scannedItems = (state = initialState, action) => {
@@ -14,13 +15,17 @@ const scannedItems = (state = initialState, action) => {
       return{
         ...state,
         startScanning: true,
-        productScanned: null
+        productScanned: null,
+     
       }
     case 'SPINNER_ON':
       return {
         ...state,
+    
         startScanning: false,
-        spinner: true
+        spinner: true,
+     
+       
       }
     case 'PRODUCT_DETECTED':
       return {
@@ -30,7 +35,12 @@ const scannedItems = (state = initialState, action) => {
         noApi: false,
         spinner: false,
         startScanning: true,
-        scannedItems: [...state.scannedItems, action.payload]
+        scannedItems: [...state.scannedItems, action.payload],
+        thisItem: [action.payload],
+     
+       
+        
+        
       }
     case 'INVALID_BARCODE':
       return {

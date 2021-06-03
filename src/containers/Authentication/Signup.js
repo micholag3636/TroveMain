@@ -5,6 +5,7 @@ import { toTrue } from "../../store/configStore.js"
 import "./Signup.css"
 import {Link} from "react-router-dom"
 import firebase from "firebase"
+import "firebase/auth"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
  
 function Signup(props){
@@ -108,7 +109,7 @@ return (
 <input  onChange={(e) => {setPassword(e.target.value)}}  value={password} placeholder="Password" type="text" className="input2" id="fname" name="fname"/>
 
 
-<button id="buttonsup" type="submit">Sign Up</button>
+<button id="buttonsup" type="submit">Sign up</button>
 
 </div>
 

@@ -62,16 +62,14 @@ class App extends Component {
         <div className="l">
 
         {!user ? (
-          <div>
-<Route exact path="/">
-  <Signup />
+          <Switch>
+<Route exact path="/" component={Signup}/> 
 
-  </Route> 
-  <Route exact path='/main' component={Login}/>
+<Route exact path="/main" component={Login}/> 
 
  
 
-  </div>
+  </Switch>
   ) : (
     <div>
       <Nav/>

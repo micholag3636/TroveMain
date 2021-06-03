@@ -70,7 +70,7 @@ noCamera={()=>console.log('there was no camera')}
   
   componentDidMount(){
     this.getLocation()
-    this.props.startScanning()
+   
  
 
   
@@ -268,57 +268,47 @@ noCamera={()=>console.log('there was no camera')}
        
       } else {
 
-        componentRendered = this.props.startScanning()
+        componentRendered =
+        setTimeout(() => {console.log(this.props.thisItem)
+
+
+
+          
+
+
+
+{this.props.thisItem.map((scannedItem, i) => {
+
+  const Data = {
+   name: scannedItem.product_name,
+   image: scannedItem.product_image,
  
-      
+   barcode: scannedItem.barcode_number,
+ 
+   description: scannedItem.description,
+   latitude: this.state.lat,
+   longitude: this.state.long
+  }
+ 
+ 
+ 
+ 
   
-      
-      }
-    
-console.log("Done")
-location.reload()
-
-      
-
-
-
-
-
-
-
-
-{this.props.scannedItems.slice(-1).map((scannedItem, i) => {
-
- const Data = {
-  name: scannedItem.product_name,
-  image: scannedItem.product_image,
-
-  barcode: scannedItem.barcode_number,
-
-  description: scannedItem.description,
-  latitude: this.state.lat,
-  longitude: this.state.long
- }
-
-
-
-
+ axios.post("https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/" + ".json", Data).then(response => {
+   console.log(response)
+ })
  
-axios.post("https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/" + ".json", Data).then(response => {
-  console.log(response)
-})
-
-
-
-
-
-
-
  
-
-})
-
-
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ })
+ 
+ 
 
      
     
@@ -328,6 +318,33 @@ axios.post("https://trove-p-default-rtdb.europe-west1.firebasedatabase.app/" + "
   
   
     
+        
+        
+        
+        
+        
+        
+        
+        
+        },2000)
+       
+        this.props.startScanning()
+       
+ 
+      
+  
+      
+      }
+    
+console.log("Done")
+
+
+      
+
+
+
+
+
    
     
   
@@ -377,7 +394,8 @@ const mapStateToProps = (state, ownProps) => {
     invalid: state.scanned.invalidBarcode,
     noApi: state.scanned.noApi,
     scannedItems: state.scanned.scannedItems,
-    selectedItem: state.scanned.productScanned
+    selectedItem: state.scanned.productScanned,
+       thisItem: state.scanned.thisItem
   }
 
 
@@ -397,4 +415,3 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Scan)
-
